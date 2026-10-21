@@ -40,33 +40,33 @@ a:hover{color:#A81E40}
 
 <header ref="{{ navRef }}" style="position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s ease, box-shadow .4s ease, backdrop-filter .4s ease">
   <div style="max-width:1280px;margin:0 auto;padding:18px clamp(20px,5vw,48px);display:flex;align-items:center;justify-content:space-between;gap:24px">
-    <a href="#top" aria-label="Crealo, inicio" style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.03em;color:#111111">
+    <a href="#top" aria-label="Crealo, home" style="display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:24px;letter-spacing:-0.03em;color:#111111">
       <span aria-hidden="true" style="width:12px;height:12px;background:#E63E62;transform:rotate(45deg);display:block"></span>
       crealo
     </a>
     <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
-      <nav aria-label="Principal" style="display:flex;gap:36px;font-size:15px;font-weight:500">
-        <a href="#servicios">Servicios</a>
+      <nav aria-label="Main" style="display:flex;gap:36px;font-size:15px;font-weight:500">
+        <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
-        <a href="#proceso">Proceso</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
       </nav>
-      <a href="#contacto" style="background:#E63E62;color:#FFFFFF;font-weight:500;font-size:15px;padding:12px 22px;border-radius:999px;transition:background .25s" style-hover="background:#A81E40;color:#FFFFFF">Comenzar</a>
+      <a href="#contact" style="background:#E63E62;color:#FFFFFF;font-weight:500;font-size:15px;padding:12px 22px;border-radius:999px;transition:background .25s" style-hover="background:#A81E40;color:#FFFFFF">Get started</a>
     </sc-if>
     <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
-      <button onClick="{{ toggleMenu }}" aria-expanded="{{ menuOpen }}" aria-label="Abrir menú" style="width:44px;height:44px;border:1px solid rgba(17,17,17,0.15);background:#FAF9F7;border-radius:999px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer">
+      <button onClick="{{ toggleMenu }}" aria-expanded="{{ menuOpen }}" aria-label="Open menu" style="width:44px;height:44px;border:1px solid rgba(17,17,17,0.15);background:#FAF9F7;border-radius:999px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer">
         <span style="width:16px;height:1.5px;background:#111111;display:block"></span>
         <span style="width:16px;height:1.5px;background:#111111;display:block"></span>
       </button>
     </sc-if>
   </div>
   <sc-if value="{{ mobileMenu }}" hint-placeholder-val="{{ false }}">
-    <nav aria-label="Principal" style="background:#FAF9F7;border-top:1px solid rgba(17,17,17,0.08);padding:12px clamp(20px,5vw,48px) 28px;display:flex;flex-direction:column;font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600">
-      <a href="#servicios" onClick="{{ closeMenu }}" style="padding:14px 0;border-bottom:1px solid rgba(17,17,17,0.08)">Servicios</a>
+    <nav aria-label="Main" style="background:#FAF9F7;border-top:1px solid rgba(17,17,17,0.08);padding:12px clamp(20px,5vw,48px) 28px;display:flex;flex-direction:column;font-family:'Space Grotesk',sans-serif;font-size:22px;font-weight:600">
+      <a href="#services" onClick="{{ closeMenu }}" style="padding:14px 0;border-bottom:1px solid rgba(17,17,17,0.08)">Services</a>
       <a href="#portfolio" onClick="{{ closeMenu }}" style="padding:14px 0;border-bottom:1px solid rgba(17,17,17,0.08)">Portfolio</a>
-      <a href="#proceso" onClick="{{ closeMenu }}" style="padding:14px 0;border-bottom:1px solid rgba(17,17,17,0.08)">Proceso</a>
-      <a href="#contacto" onClick="{{ closeMenu }}" style="padding:14px 0">Contacto</a>
-      <a href="#contacto" onClick="{{ closeMenu }}" style="margin-top:16px;background:#E63E62;color:#FFFFFF;font-family:Inter,sans-serif;font-weight:500;font-size:16px;padding:15px 22px;border-radius:999px;text-align:center">Comenzar</a>
+      <a href="#process" onClick="{{ closeMenu }}" style="padding:14px 0;border-bottom:1px solid rgba(17,17,17,0.08)">Process</a>
+      <a href="#contact" onClick="{{ closeMenu }}" style="padding:14px 0">Contact</a>
+      <a href="#contact" onClick="{{ closeMenu }}" style="margin-top:16px;background:#E63E62;color:#FFFFFF;font-family:Inter,sans-serif;font-weight:500;font-size:16px;padding:15px 22px;border-radius:999px;text-align:center">Get started</a>
     </nav>
   </sc-if>
 </header>
@@ -75,7 +75,7 @@ a:hover{color:#A81E40}
   <section data-screen-label="01 Hero" aria-labelledby="hero-title" style="position:relative;min-height:max(84svh,600px);overflow:hidden;display:flex;align-items:flex-end;background:#FAF9F7">
     <div ref="{{ parallaxRef }}" aria-hidden="true" style="position:absolute;inset:0;will-change:transform">
       <sc-if value="{{ motionOk }}" hint-placeholder-val="{{ true }}">
-        <video ref="{{ videoRef }}" src="assets/transition.mp4" poster="assets/image-1.png" muted="{{ true }}" autoPlay="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" style="width:100%;height:100%;object-fit:cover;object-position:72% 50%;display:block;transform:translateX(-8%)"></video>
+        <video ref="{{ videoRef }}" src="assets/hero-1080p.mp4" poster="assets/image-1.png" muted="{{ true }}" autoPlay="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" style="width:100%;height:100%;object-fit:cover;object-position:72% 50%;display:block;transform:translateX(-8%)"></video>
       </sc-if>
       <sc-if value="{{ reduced }}" hint-placeholder-val="{{ false }}">
         <img src="assets/image-1.png" alt="" style="width:100%;height:100%;object-fit:cover;object-position:72% 50%;display:block;transform:translateX(-8%)">
@@ -86,13 +86,13 @@ a:hover{color:#A81E40}
     <div style="position:relative;width:100%;max-width:1280px;margin:0 auto;padding:{{ heroPadTop }} clamp(20px,5vw,48px) clamp(40px,7vh,72px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:48px">
       <div data-reveal="" style="max-width:{{ heroTextMax }};display:grid;gap:28px">
         <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#A81E40;border:1px dashed #A81E40;padding:4px 8px;border-radius:4px;justify-self:start">Copy provisional</span>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#A81E40;border:1px dashed #A81E40;padding:4px 8px;border-radius:4px;justify-self:start">Draft copy</span>
         </sc-if>
-        <h1 id="hero-title" style="margin: 0; font-family: 'Space Grotesk',sans-serif; font-weight: 700; font-size: 59px; line-height: 1; letter-spacing: -0.035em; text-wrap: balance; width: 523px; height: 178px">Diseño estratégico que hace crecer tu negocio.</h1>
-        <p style="margin:0;font-size:clamp(17px,1.4vw,20px);line-height:1.55;color:rgba(17,17,17,0.72);max-width:500px;text-wrap:pretty">Creamos marcas, productos digitales y sitios que convierten. Estrategia y diseño trabajando juntos para resultados medibles.</p>
+        <h1 id="hero-title" style="margin: 0; font-family: 'Space Grotesk',sans-serif; font-weight: 700; font-size: 59px; line-height: 1; letter-spacing: -0.035em; text-wrap: balance; width: 523px; height: 178px">Strategic design that grows your business.</h1>
+        <p style="margin:0;font-size:clamp(17px,1.4vw,20px);line-height:1.55;color:rgba(17,17,17,0.72);max-width:500px;text-wrap:pretty">We build brands, digital products and websites that convert. Strategy and design working together for measurable results.</p>
         <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center">
-          <a href="#contacto" style="display:inline-flex;align-items:center;gap:12px;background:#E63E62;color:#FFFFFF;font-weight:500;font-size:16px;padding:17px 28px;border-radius:999px;transition:background .25s, transform .25s" style-hover="background:#A81E40;color:#FFFFFF;transform:translateY(-1px)">
-            Impulsa tu negocio con una llamada
+          <a href="#contact" style="display:inline-flex;align-items:center;gap:12px;background:#E63E62;color:#FFFFFF;font-weight:500;font-size:16px;padding:17px 28px;border-radius:999px;transition:background .25s, transform .25s" style-hover="background:#A81E40;color:#FFFFFF;transform:translateY(-1px)">
+            Grow your business with a call
             <span aria-hidden="true" style="width:7px;height:7px;background:#FFFFFF;transform:rotate(45deg);display:block"></span>
           </a>
         </div>
@@ -100,24 +100,24 @@ a:hover{color:#A81E40}
 
       <dl data-reveal="" style="margin:0;display:grid;grid-auto-flow:row;gap:28px;border-left:1px solid rgba(17,17,17,0.12);padding-left:24px">
         <div style="display:grid;gap:4px">
-          <dt style="order:2;font-size:14px;color:rgba(17,17,17,0.62)">proyectos</dt>
+          <dt style="order:2;font-size:14px;color:rgba(17,17,17,0.62)">projects</dt>
           <dd style="order:1;margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:-0.03em">40+</dd>
         </div>
         <div style="display:grid;gap:4px">
-          <dt style="order:2;font-size:14px;color:rgba(17,17,17,0.62)">satisfacción</dt>
+          <dt style="order:2;font-size:14px;color:rgba(17,17,17,0.62)">satisfaction</dt>
           <dd style="order:1;margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:-0.03em">98%</dd>
         </div>
         <div style="display:grid;gap:4px">
-          <dt style="order:2;font-size:14px;color:rgba(17,17,17,0.62)">países</dt>
+          <dt style="order:2;font-size:14px;color:rgba(17,17,17,0.62)">countries</dt>
           <dd style="order:1;margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:-0.03em">12</dd>
         </div>
       </dl>
     </div>
   </section>
 
-  <section data-screen-label="02 Clientes" aria-labelledby="clientes-title" style="padding:clamp(56px,8vw,96px) 0">
+  <section data-screen-label="02 Clients" aria-labelledby="clientes-title" style="padding:clamp(56px,8vw,96px) 0">
     <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,48px);display:grid;gap:36px">
-      <h2 id="clientes-title" data-reveal="" style="margin:0;font-size:14px;font-weight:500;color:rgba(17,17,17,0.62);text-align:center">Empresas que confían en nosotros</h2>
+      <h2 id="clientes-title" data-reveal="" style="margin:0;font-size:14px;font-weight:500;color:rgba(17,17,17,0.62);text-align:center">Companies that trust us</h2>
       <div data-reveal="" style="overflow:hidden;-webkit-mask-image:linear-gradient(90deg, transparent 0, #000 10%, #000 90%, transparent 100%);mask-image:linear-gradient(90deg, transparent 0, #000 10%, #000 90%, transparent 100%)" onMouseEnter="{{ pauseMarquee }}" onMouseLeave="{{ resumeMarquee }}">
         <div ref="{{ marqueeRef }}" style="display:flex;width:max-content;will-change:transform">
           <sc-for list="{{ logoLoop }}" as="logo" hint-placeholder-count="8">
@@ -133,14 +133,14 @@ a:hover{color:#A81E40}
     </div>
   </section>
 
-  <section id="servicios" data-screen-label="03 Servicios" aria-labelledby="servicios-title" style="background:#EFEDE9;padding:clamp(88px,12vw,160px) 0">
+  <section id="services" data-screen-label="03 Services" aria-labelledby="servicios-title" style="background:#EFEDE9;padding:clamp(88px,12vw,160px) 0">
     <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,48px);display:grid;gap:clamp(48px,6vw,80px)">
       <div data-reveal="" style="display:grid;gap:18px;max-width:720px">
         <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#A81E40">Servicios</span>
-          <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#A81E40;border:1px dashed #A81E40;padding:3px 7px;border-radius:4px">Copy provisional</span></sc-if>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#A81E40">Services</span>
+          <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#A81E40;border:1px dashed #A81E40;padding:3px 7px;border-radius:4px">Draft copy</span></sc-if>
         </div>
-        <h2 id="servicios-title" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,4.4vw,56px);line-height:1.04;letter-spacing:-0.03em;text-wrap:balance">Tres disciplinas, un mismo objetivo: que tu negocio crezca.</h2>
+        <h2 id="servicios-title" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,4.4vw,56px);line-height:1.04;letter-spacing:-0.03em;text-wrap:balance">Three disciplines, one goal: growing your business.</h2>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(max(280px, calc((100% - 40px) / 3)),1fr));grid-auto-rows:1fr;gap:20px">
         <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
@@ -166,9 +166,9 @@ a:hover{color:#A81E40}
       <div data-reveal="" style="display:grid;gap:18px;max-width:720px">
         <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
           <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#A81E40">Portfolio</span>
-          <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#A81E40;border:1px dashed #A81E40;padding:3px 7px;border-radius:4px">Copy provisional</span></sc-if>
+          <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#A81E40;border:1px dashed #A81E40;padding:3px 7px;border-radius:4px">Draft copy</span></sc-if>
         </div>
-        <h2 id="portfolio-title" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,4.4vw,56px);line-height:1.04;letter-spacing:-0.03em;text-wrap:balance">Casos de éxito</h2>
+        <h2 id="portfolio-title" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,4.4vw,56px);line-height:1.04;letter-spacing:-0.03em;text-wrap:balance">Case studies</h2>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px">
         <sc-for list="{{ cases }}" as="c" hint-placeholder-count="2">
@@ -191,14 +191,14 @@ a:hover{color:#A81E40}
     </div>
   </section>
 
-  <section id="proceso" data-screen-label="05 Proceso" aria-labelledby="proceso-title" style="background:#EFEDE9;padding:clamp(88px,12vw,160px) 0">
+  <section id="process" data-screen-label="05 Process" aria-labelledby="proceso-title" style="background:#EFEDE9;padding:clamp(88px,12vw,160px) 0">
     <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,48px);display:grid;gap:clamp(48px,6vw,80px)">
       <div data-reveal="" style="display:grid;gap:18px;max-width:720px">
         <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#A81E40">Proceso</span>
-          <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#A81E40;border:1px dashed #A81E40;padding:3px 7px;border-radius:4px">Copy provisional</span></sc-if>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#A81E40">Process</span>
+          <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#A81E40;border:1px dashed #A81E40;padding:3px 7px;border-radius:4px">Draft copy</span></sc-if>
         </div>
-        <h2 id="proceso-title" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,4.4vw,56px);line-height:1.04;letter-spacing:-0.03em;text-wrap:balance">Cuatro pasos, sin improvisar.</h2>
+        <h2 id="proceso-title" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,4.4vw,56px);line-height:1.04;letter-spacing:-0.03em;text-wrap:balance">Four steps, nothing improvised.</h2>
       </div>
       <div ref="{{ stepsRef }}" style="position:relative">
       <span ref="{{ stepsLineRef }}" aria-hidden="true" style="position:absolute;left:0;right:0;top:-0.5px;height:2px;background:#E63E62;transform-origin:left center;transform:scaleX(0);z-index:1;display:block;pointer-events:none"></span>
@@ -218,14 +218,14 @@ a:hover{color:#A81E40}
     </div>
   </section>
 
-  <section data-screen-label="06 Testimonios" aria-labelledby="testimonios-title" style="padding:clamp(88px,12vw,160px) 0">
+  <section data-screen-label="06 Testimonials" aria-labelledby="testimonios-title" style="padding:clamp(88px,12vw,160px) 0">
     <div style="max-width:1280px;margin:0 auto;padding:0 clamp(20px,5vw,48px);display:grid;gap:clamp(48px,6vw,80px)">
       <div data-reveal="" style="display:grid;gap:18px;max-width:720px">
         <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#A81E40">Testimonios</span>
-          <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#A81E40;border:1px dashed #A81E40;padding:3px 7px;border-radius:4px">Copy provisional</span></sc-if>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:#A81E40">Testimonials</span>
+          <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#A81E40;border:1px dashed #A81E40;padding:3px 7px;border-radius:4px">Draft copy</span></sc-if>
         </div>
-        <h2 id="testimonios-title" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,4.4vw,56px);line-height:1.04;letter-spacing:-0.03em;text-wrap:balance">Lo que dicen nuestros clientes</h2>
+        <h2 id="testimonios-title" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,4.4vw,56px);line-height:1.04;letter-spacing:-0.03em;text-wrap:balance">What our clients say</h2>
       </div>
     </div>
     <div style="overflow:hidden;margin-top:clamp(48px,6vw,80px)" onMouseEnter="{{ pauseQuotes }}" onMouseLeave="{{ resumeQuotes }}">
@@ -246,13 +246,13 @@ a:hover{color:#A81E40}
     </div>
   </section>
 
-  <section id="contacto" data-screen-label="07 CTA" aria-labelledby="cta-title" style="position:relative;overflow:hidden;background:#111111;color:#FAF9F7;padding:clamp(112px,16vw,200px) 0">
+  <section id="contact" data-screen-label="07 CTA" aria-labelledby="cta-title" style="position:relative;overflow:hidden;background:#111111;color:#FAF9F7;padding:clamp(112px,16vw,200px) 0">
     <div aria-hidden="true" style="position:absolute;left:50%;top:50%;width:min(90vw,900px);aspect-ratio:1;transform:translate(-50%,-50%);background:radial-gradient(closest-side, rgba(230,62,98,0.42), rgba(168,30,64,0.16) 55%, rgba(17,17,17,0) 100%);filter:blur(20px)"></div>
     <div ref="{{ ctaDiamondRef }}" aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: min(64vw,560px); aspect-ratio: 1; transform: translate(-50%,-50%) rotate(45deg); border: clamp(18px,3vw,36px) solid rgba(230,62,98,0.14); border-radius: 6px; will-change: transform; border-width: 70px"></div>
     <div data-reveal="" style="position:relative;max-width:900px;margin:0 auto;padding:0 clamp(20px,5vw,48px);display:grid;gap:40px;justify-items:center;text-align:center">
-      <h2 id="cta-title" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(36px,5.6vw,76px);line-height:1;letter-spacing:-0.035em;text-wrap:balance">¿Listo para transformar tu negocio a través del diseño?</h2>
-      <a href="mailto:hola@crealo.com" style="display:inline-flex;align-items:center;gap:12px;background:#E63E62;color:#FFFFFF;font-weight:500;font-size:17px;padding:18px 32px;border-radius:999px;transition:background .25s, transform .25s" style-hover="background:#FAF9F7;color:#111111;transform:translateY(-1px)">
-        Agendar una llamada
+      <h2 id="cta-title" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(36px,5.6vw,76px);line-height:1;letter-spacing:-0.035em;text-wrap:balance">Ready to transform your business through design?</h2>
+      <a href="mailto:hello@crealo.com" style="display:inline-flex;align-items:center;gap:12px;background:#E63E62;color:#FFFFFF;font-weight:500;font-size:17px;padding:18px 32px;border-radius:999px;transition:background .25s, transform .25s" style-hover="background:#FAF9F7;color:#111111;transform:translateY(-1px)">
+        Book a call
         <span aria-hidden="true" style="width:7px;height:7px;background:currentColor;transform:rotate(45deg);display:block"></span>
       </a>
     </div>
@@ -267,33 +267,33 @@ a:hover{color:#A81E40}
           <span aria-hidden="true" style="width:12px;height:12px;background:#E63E62;transform:rotate(45deg);display:block"></span>
           crealo
         </a>
-        <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(250,249,247,0.68);max-width:280px">Diseño estratégico para empresas que quieren crecer.</p>
-        <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#F28AA0;border:1px dashed #F28AA0;padding:3px 7px;border-radius:4px;justify-self:start">Copy provisional</span></sc-if>
+        <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(250,249,247,0.68);max-width:280px">Strategic design for companies that want to grow.</p>
+        <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}"><span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#F28AA0;border:1px dashed #F28AA0;padding:3px 7px;border-radius:4px;justify-self:start">Draft copy</span></sc-if>
       </div>
-      <nav aria-label="Navegación del pie" style="display:grid;gap:12px;align-content:start;font-size:15px">
-        <h2 style="margin:0 0 6px;font-size:13px;font-weight:500;color:rgba(250,249,247,0.6)">Navegación</h2>
-        <a href="#servicios" style="color:#FAF9F7" style-hover="color:#F28AA0">Servicios</a>
+      <nav aria-label="Footer navigation" style="display:grid;gap:12px;align-content:start;font-size:15px">
+        <h2 style="margin:0 0 6px;font-size:13px;font-weight:500;color:rgba(250,249,247,0.6)">Navigation</h2>
+        <a href="#services" style="color:#FAF9F7" style-hover="color:#F28AA0">Services</a>
         <a href="#portfolio" style="color:#FAF9F7" style-hover="color:#F28AA0">Portfolio</a>
-        <a href="#proceso" style="color:#FAF9F7" style-hover="color:#F28AA0">Proceso</a>
-        <a href="#contacto" style="color:#FAF9F7" style-hover="color:#F28AA0">Contacto</a>
+        <a href="#process" style="color:#FAF9F7" style-hover="color:#F28AA0">Process</a>
+        <a href="#contact" style="color:#FAF9F7" style-hover="color:#F28AA0">Contact</a>
       </nav>
       <div style="display:grid;gap:12px;align-content:start;font-size:15px">
-        <h2 style="margin:0 0 6px;font-size:13px;font-weight:500;color:rgba(250,249,247,0.6)">Contacto</h2>
-        <a href="mailto:hola@crealo.com" style="color:#FAF9F7" style-hover="color:#F28AA0">hola@crealo.com</a>
-        <span style="color:rgba(250,249,247,0.8)">Buenos Aires · Remoto</span>
+        <h2 style="margin:0 0 6px;font-size:13px;font-weight:500;color:rgba(250,249,247,0.6)">Contact</h2>
+        <a href="mailto:hello@crealo.com" style="color:#FAF9F7" style-hover="color:#F28AA0">hello@crealo.com</a>
+        <span style="color:rgba(250,249,247,0.8)">Buenos Aires · Remote</span>
       </div>
       <div style="display:grid;gap:12px;align-content:start;font-size:15px">
-        <h2 style="margin:0 0 6px;font-size:13px;font-weight:500;color:rgba(250,249,247,0.6)">Redes</h2>
+        <h2 style="margin:0 0 6px;font-size:13px;font-weight:500;color:rgba(250,249,247,0.6)">Social</h2>
         <a href="#" style="color:#FAF9F7" style-hover="color:#F28AA0">LinkedIn</a>
         <a href="#" style="color:#FAF9F7" style-hover="color:#F28AA0">Instagram</a>
         <a href="#" style="color:#FAF9F7" style-hover="color:#F28AA0">Behance</a>
       </div>
     </div>
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid rgba(250,249,247,0.1);padding-top:24px;font-size:13px;color:rgba(250,249,247,0.6)">
-      <span>© 2026 Crealo. Todos los derechos reservados.</span>
+      <span>© 2026 Crealo. All rights reserved.</span>
       <div style="display:flex;gap:24px">
-        <a href="#" style="color:rgba(250,249,247,0.6)" style-hover="color:#FAF9F7">Privacidad</a>
-        <a href="#" style="color:rgba(250,249,247,0.6)" style-hover="color:#FAF9F7">Términos</a>
+        <a href="#" style="color:rgba(250,249,247,0.6)" style-hover="color:#FAF9F7">Privacy</a>
+        <a href="#" style="color:rgba(250,249,247,0.6)" style-hover="color:#FAF9F7">Terms</a>
       </div>
     </div>
   </div>
@@ -484,12 +484,12 @@ class Component extends DCLogic {
       pauseMarquee: () => { this.mqPaused = true; },
       resumeMarquee: () => { this.mqPaused = false; },
       servicesOpen: this.state.servicesOpen || false,
-      servicesLabel: this.state.servicesOpen ? 'Ver menos servicios' : 'Ver más servicios',
+      servicesLabel: this.state.servicesOpen ? 'Show fewer services' : 'Show more services',
       toggleServices: () => this.setState(s => ({ servicesOpen: !s.servicesOpen })),
       services: [
-        { n: '01', title: 'Branding estratégico', body: 'Identidades que comunican con claridad qué hace tu empresa y por qué elegirla. Posicionamiento, sistema visual y voz de marca.' },
-        { n: '02', title: 'Producto digital', body: 'Diseño UX/UI de plataformas y aplicaciones B2B, pensado para reducir fricción y acelerar la adopción.' },
-        { n: '03', title: 'Sitios que convierten', body: 'Sitios web y landing pages orientados a generar oportunidades de negocio, medibles desde el primer día.' },
+        { n: '01', title: 'Strategic Branding', body: 'Identities that clearly communicate what your company does and why to choose it. Positioning, visual system and brand voice.' },
+        { n: '02', title: 'Digital Product', body: 'UX/UI design for B2B platforms and apps, built to reduce friction and speed up adoption.' },
+        { n: '03', title: 'Websites That Convert', body: 'Websites and landing pages designed to generate business opportunities, measurable from day one.' },
         { n: '04', title: 'Design Systems', body: 'Component libraries and tokens so your product scales with consistency.' },
         { n: '05', title: 'UX Research & Audits', body: "We evaluate your product to find what's blocking conversion and how to fix it." },
         { n: '06', title: 'Dashboards & Data', body: 'Internal panels and B2B analytics where data clarity is critical.' },
@@ -498,27 +498,27 @@ class Component extends DCLogic {
         { n: '09', title: 'Ongoing Consulting', body: 'Retained support for teams without an in-house designer.' }
       ].slice(0, this.state.servicesOpen ? 9 : 3).map((s, i) => ({ ...s, fill: this.state.hoverSvc === i ? 1 : 0, enter: () => this.setState({ hoverSvc: i }), leave: () => this.setState({ hoverSvc: null }) })),
       cases: [
-        { sector: 'Fintech · Producto digital', badge: '+180% conversión', metric: '+180%', value: 180, metricLabel: 'conversión en onboarding', title: 'Rediseño del onboarding de una plataforma de pagos', body: 'Simplificamos el alta de cuentas empresariales de 9 a 4 pasos y rediseñamos la comunicación de cada etapa.' },
-        { sector: 'Retail · Branding + web', badge: '+42% engagement', metric: '+42%', value: 42, metricLabel: 'engagement', title: 'Sistema de marca y e-commerce para una cadena regional', body: 'Nueva identidad, lineamientos de contenido y una tienda online construida sobre el mismo sistema visual.' }
+        { sector: 'Fintech · Digital product', badge: '+180% conversion', metric: '+180%', value: 180, metricLabel: 'onboarding conversion', title: 'Onboarding redesign for a payments platform', body: 'We cut business account sign-up from 9 steps to 4 and redesigned the messaging at every stage.' },
+        { sector: 'Retail · Branding + web', badge: '+42% engagement', metric: '+42%', value: 42, metricLabel: 'engagement', title: 'Brand system and e-commerce for a regional chain', body: 'A new identity, content guidelines and an online store built on the same visual system.' }
       ],
       steps: [
-        { n: '01', title: 'Descubrimiento', body: 'Entendemos tu negocio, tus clientes y tus métricas antes de diseñar nada.' },
-        { n: '02', title: 'Estrategia', body: 'Definimos objetivos, prioridades y el criterio con el que vamos a medir el éxito.' },
-        { n: '03', title: 'Diseño', body: 'Convertimos la estrategia en marca, producto o sitio, con entregas frecuentes.' },
-        { n: '04', title: 'Iteración', body: 'Medimos resultados reales y ajustamos para seguir mejorando.' }
+        { n: '01', title: 'Discovery', body: 'We understand your business, your customers and your metrics before designing anything.' },
+        { n: '02', title: 'Strategy', body: 'We define goals, priorities and the criteria we will use to measure success.' },
+        { n: '03', title: 'Design', body: 'We turn strategy into a brand, product or website, with frequent deliveries.' },
+        { n: '04', title: 'Iteration', body: 'We measure real results and adjust to keep improving.' }
       ],
       quotesRef: this.quotesRef,
       pauseQuotes: () => { this.qPaused = true; },
       resumeQuotes: () => { this.qPaused = false; },
       quotesLoop: (() => { const Q = [
-        { text: 'Crealo entendió nuestro negocio antes de proponer una sola pantalla. Los resultados llegaron en el primer trimestre.', name: 'Lucía Ferrante', role: 'CEO · Norvik' },
-        { text: 'Por primera vez nuestra marca refleja lo que realmente hacemos. El equipo comercial lo notó de inmediato.', name: 'Martina Solís', role: 'Directora de Marketing · Altamar' },
-        { text: 'Un proceso claro, entregas puntuales y decisiones siempre respaldadas por datos.', name: 'Diego Arrieta', role: 'Head of Product · Kuadra' },
-        { text: 'Rediseñaron nuestro onboarding y la tasa de activación subió en pocas semanas.', name: 'Tomás Beltrán', role: 'COO · Vértice' },
-        { text: 'Trabajan como parte del equipo. Entienden de negocio tanto como de diseño.', name: 'Carolina Méndez', role: 'Fundadora · Bruma' },
-        { text: 'El nuevo sistema de diseño nos permitió lanzar funcionalidades el doble de rápido.', name: 'Joaquín Paredes', role: 'CTO · Tándem' },
-        { text: 'Nuestra presentación comercial por fin está a la altura del producto. Cerramos dos cuentas grandes.', name: 'Valeria Ortiz', role: 'Directora Comercial · Orilla' },
-        { text: 'Detectaron en la auditoría lo que nosotros no veíamos. Cada recomendación tuvo impacto.', name: 'Andrés Quiroga', role: 'Gerente General · Ferro & Co' }
+        { text: 'Crealo understood our business before proposing a single screen. The results came in the first quarter.', name: 'Emily Carter', role: 'CEO · Norvik' },
+        { text: 'For the first time our brand reflects what we actually do. The sales team noticed right away.', name: 'Sarah Mitchell', role: 'Marketing Director · Altamar' },
+        { text: 'A clear process, on-time deliveries and decisions always backed by data.', name: 'James Walker', role: 'Head of Product · Kuadra' },
+        { text: 'They redesigned our onboarding and the activation rate went up within weeks.', name: 'Michael Turner', role: 'COO · Vértice' },
+        { text: 'They work as part of the team. They understand business as well as design.', name: 'Olivia Bennett', role: 'Founder · Bruma' },
+        { text: 'The new design system let us ship features twice as fast.', name: 'Daniel Hughes', role: 'CTO · Tándem' },
+        { text: 'Our sales deck finally lives up to the product. We closed two major accounts.', name: 'Jessica Reed', role: 'Sales Director · Orilla' },
+        { text: 'Their audit found what we couldn\'t see. Every recommendation had an impact.', name: 'Ryan Cooper', role: 'General Manager · Ferro & Co' }
       ].map(q => ({ ...q, initials: q.name.split(' ').map(w => w[0]).join('') })); return [...Q, ...Q]; })()
     };
   }
