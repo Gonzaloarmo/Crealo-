@@ -18,6 +18,29 @@ a{color:#111111;text-decoration:none}
 a:hover{color:#A81E40}
 :focus-visible{outline:2px solid #E63E62;outline-offset:3px;border-radius:4px}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+@media (max-width: 767px){
+html,body{overflow-x:clip}
+[data-m=hero]{min-height:auto!important;align-items:stretch!important}
+[data-m=hero-media]{opacity:.3;transform:none!important;object-position:50% 30%!important}
+[data-m=hero-fade]{background:linear-gradient(180deg,rgba(250,249,247,.25) 0%,rgba(250,249,247,.6) 50%,#FAF9F7 100%)!important}
+[data-m=hero-inner]{padding:112px 20px 56px!important;flex-direction:column!important;align-items:stretch!important;gap:48px!important}
+[data-m=hero-text]{max-width:100%!important;gap:24px!important}
+[data-m=hero-h1]{width:auto!important;height:auto!important;font-size:clamp(2.25rem,10vw,3rem)!important;line-height:1.05!important;overflow-wrap:break-word}
+[data-m=hero-cta]{width:100%;justify-content:center;min-height:52px;padding:14px 24px!important;text-align:center}
+[data-m=stats]{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important;border-left:none!important;border-top:1px solid rgba(17,17,17,.12);padding:24px 0 0!important}
+[data-m=stat-n]{font-size:30px!important}
+[data-m=stat-l]{font-size:13px!important}
+[data-m=rail]{display:flex!important;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:20px;margin:0 -20px;padding:4px 20px 8px;gap:12px!important;scrollbar-width:none}
+[data-m=rail]::-webkit-scrollbar,[data-m=qrail]::-webkit-scrollbar{display:none}
+[data-m=rail-card]{flex:0 0 84%;scroll-snap-align:start;min-height:300px!important;padding:28px!important}
+[data-m=svc-more]{display:none!important}
+[data-m=case]{min-height:0!important;padding:28px!important;gap:32px!important}
+[data-m=qrail]{overflow-x:auto!important;scroll-snap-type:x mandatory;scroll-padding-left:20px;scrollbar-width:none}
+[data-m=qtrack]{transform:none!important;padding:4px 20px 8px!important;gap:12px!important}
+[data-m=qcard]{width:84vw!important;scroll-snap-align:start}
+[data-m=step]{padding:24px 0 0!important}
+[data-m=flink]{min-height:44px;display:flex;align-items:center}
+}
 </style>
 </helmet>
 <template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" data-bg-color="#FAF9F7"><rect width="100" height="100" fill="#FAF9F7"></rect><rect x="38" y="38" width="24" height="24" fill="#E63E62" transform="rotate(45 50 50)"></rect></svg></template>
@@ -72,44 +95,44 @@ a:hover{color:#A81E40}
 </header>
 
 <main id="top">
-  <section data-screen-label="01 Hero" aria-labelledby="hero-title" style="position:relative;min-height:max(84svh,600px);overflow:hidden;display:flex;align-items:flex-end;background:#FAF9F7">
+  <section data-m="hero" data-screen-label="01 Hero" aria-labelledby="hero-title" style="position:relative;min-height:max(84svh,600px);overflow:hidden;display:flex;align-items:flex-end;background:#FAF9F7">
     <div ref="{{ parallaxRef }}" aria-hidden="true" style="position:absolute;inset:0;will-change:transform">
       <sc-if value="{{ motionOk }}" hint-placeholder-val="{{ true }}">
-        <video ref="{{ videoRef }}" src="assets/hero-loop.mp4" poster="assets/image-1.png" muted="{{ true }}" autoPlay="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" style="width:100%;height:100%;object-fit:cover;object-position:72% 50%;display:block;transform:translateX(-8%)"></video>
+        <video data-m="hero-media" ref="{{ videoRef }}" src="assets/hero-loop.mp4" poster="assets/image-1.png" muted="{{ true }}" autoPlay="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" preload="auto" style="width:100%;height:100%;object-fit:cover;object-position:72% 50%;display:block;transform:translateX(-8%)"></video>
       </sc-if>
       <sc-if value="{{ reduced }}" hint-placeholder-val="{{ false }}">
-        <img src="assets/image-1.png" alt="" style="width:100%;height:100%;object-fit:cover;object-position:72% 50%;display:block;transform:translateX(-8%)">
+        <img data-m="hero-media" src="assets/image-1.png" alt="" style="width:100%;height:100%;object-fit:cover;object-position:72% 50%;display:block;transform:translateX(-8%)">
       </sc-if>
     </div>
-    <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg, #FAF9F7 0%, rgba(250,249,247,0) 12%, rgba(250,249,247,0) 72%, #FAF9F7 90%), linear-gradient(180deg, #FAF9F7 0%, rgba(250,249,247,0) 14%, rgba(250,249,247,0) 82%, #FAF9F7 100%)"></div>
+    <div data-m="hero-fade" aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg, #FAF9F7 0%, rgba(250,249,247,0) 12%, rgba(250,249,247,0) 72%, #FAF9F7 90%), linear-gradient(180deg, #FAF9F7 0%, rgba(250,249,247,0) 14%, rgba(250,249,247,0) 82%, #FAF9F7 100%)"></div>
 
-    <div style="position:relative;width:100%;max-width:1280px;margin:0 auto;padding:{{ heroPadTop }} clamp(20px,5vw,48px) clamp(40px,7vh,72px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:48px">
-      <div data-reveal="" style="max-width:{{ heroTextMax }};display:grid;gap:28px">
+    <div data-m="hero-inner" style="position:relative;width:100%;max-width:1280px;margin:0 auto;padding:{{ heroPadTop }} clamp(20px,5vw,48px) clamp(40px,7vh,72px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:48px">
+      <div data-m="hero-text" data-reveal="" style="max-width:{{ heroTextMax }};display:grid;gap:28px">
         <sc-if value="{{ showDraft }}" hint-placeholder-val="{{ true }}">
           <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#A81E40;border:1px dashed #A81E40;padding:4px 8px;border-radius:4px;justify-self:start">Draft copy</span>
         </sc-if>
-        <h1 id="hero-title" style="margin: 0; font-family: 'Space Grotesk',sans-serif; font-weight: 700; font-size: 59px; line-height: 1; letter-spacing: -0.035em; text-wrap: balance; width: 523px; height: 178px">Strategic design that grows your business.</h1>
+        <h1 data-m="hero-h1" id="hero-title" style="margin: 0; font-family: 'Space Grotesk',sans-serif; font-weight: 700; font-size: 59px; line-height: 1; letter-spacing: -0.035em; text-wrap: balance; width: 523px; height: 178px">Strategic design that grows your business.</h1>
         <p style="margin:0;font-size:clamp(17px,1.4vw,20px);line-height:1.55;color:rgba(17,17,17,0.72);max-width:500px;text-wrap:pretty">We build brands, digital products and websites that convert. Strategy and design working together for measurable results.</p>
         <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center">
-          <a href="#contact" style="display:inline-flex;align-items:center;gap:12px;background:#E63E62;color:#FFFFFF;font-weight:500;font-size:16px;padding:17px 28px;border-radius:999px;transition:background .25s, transform .25s" style-hover="background:#A81E40;color:#FFFFFF;transform:translateY(-1px)">
+          <a data-m="hero-cta" href="#contact" style="display:inline-flex;align-items:center;gap:12px;background:#E63E62;color:#FFFFFF;font-weight:500;font-size:16px;padding:17px 28px;border-radius:999px;transition:background .25s, transform .25s" style-hover="background:#A81E40;color:#FFFFFF;transform:translateY(-1px)">
             Grow your business with a call
             <span aria-hidden="true" style="width:7px;height:7px;background:#FFFFFF;transform:rotate(45deg);display:block"></span>
           </a>
         </div>
       </div>
 
-      <dl data-reveal="" style="margin:0;display:grid;grid-auto-flow:row;gap:28px;border-left:1px solid rgba(17,17,17,0.12);padding-left:24px">
+      <dl data-m="stats" data-reveal="" style="margin:0;display:grid;grid-auto-flow:row;gap:28px;border-left:1px solid rgba(17,17,17,0.12);padding-left:24px">
         <div style="display:grid;gap:4px">
-          <dt style="order:2;font-size:14px;color:rgba(17,17,17,0.62)">projects</dt>
-          <dd style="order:1;margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:-0.03em">40+</dd>
+          <dt data-m="stat-l" style="order:2;font-size:14px;color:rgba(17,17,17,0.62)">projects</dt>
+          <dd data-m="stat-n" style="order:1;margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:-0.03em">40+</dd>
         </div>
         <div style="display:grid;gap:4px">
-          <dt style="order:2;font-size:14px;color:rgba(17,17,17,0.62)">satisfaction</dt>
-          <dd style="order:1;margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:-0.03em">98%</dd>
+          <dt data-m="stat-l" style="order:2;font-size:14px;color:rgba(17,17,17,0.62)">satisfaction</dt>
+          <dd data-m="stat-n" style="order:1;margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:-0.03em">98%</dd>
         </div>
         <div style="display:grid;gap:4px">
-          <dt style="order:2;font-size:14px;color:rgba(17,17,17,0.62)">countries</dt>
-          <dd style="order:1;margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:-0.03em">12</dd>
+          <dt data-m="stat-l" style="order:2;font-size:14px;color:rgba(17,17,17,0.62)">countries</dt>
+          <dd data-m="stat-n" style="order:1;margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(28px,3vw,40px);letter-spacing:-0.03em">12</dd>
         </div>
       </dl>
     </div>
@@ -142,9 +165,9 @@ a:hover{color:#A81E40}
         </div>
         <h2 id="servicios-title" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,4.4vw,56px);line-height:1.04;letter-spacing:-0.03em;text-wrap:balance">Three disciplines, one goal: growing your business.</h2>
       </div>
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(max(280px, calc((100% - 40px) / 3)),1fr));grid-auto-rows:1fr;gap:20px">
+      <div data-m="rail" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(max(280px, calc((100% - 40px) / 3)),1fr));grid-auto-rows:1fr;gap:20px">
         <sc-for list="{{ services }}" as="s" hint-placeholder-count="3">
-          <article data-reveal="" onMouseEnter="{{ s.enter }}" onMouseLeave="{{ s.leave }}" style="background:#FAF9F7;border-radius:20px;padding:clamp(28px,3vw,40px);display:grid;gap:20px;align-content:start;min-height:320px;transition:transform .35s ease, box-shadow .35s ease" style-hover="transform:translateY(-4px);box-shadow:0 24px 48px -28px rgba(168,30,64,0.35)">
+          <article data-m="rail-card" data-reveal="" onMouseEnter="{{ s.enter }}" onMouseLeave="{{ s.leave }}" style="background:#FAF9F7;border-radius:20px;padding:clamp(28px,3vw,40px);display:grid;gap:20px;align-content:start;min-height:320px;transition:transform .35s ease, box-shadow .35s ease" style-hover="transform:translateY(-4px);box-shadow:0 24px 48px -28px rgba(168,30,64,0.35)">
             <span aria-hidden="true" style="width:22px;height:22px;border:2px solid #E63E62;transform:rotate(45deg);display:block;margin:6px 0 24px 4px;overflow:hidden;position:relative"><span style="position:absolute;inset:0;background:#E63E62;transform-origin:center;transform:scale({{ s.fill }});transition:transform .45s cubic-bezier(.2,.7,.2,1);display:block"></span></span>
             <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:rgba(17,17,17,0.55)">{{ s.n }}</span>
             <h3 style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:26px;letter-spacing:-0.02em">{{ s.title }}</h3>
@@ -152,7 +175,7 @@ a:hover{color:#A81E40}
           </article>
         </sc-for>
       </div>
-      <div style="display:flex;justify-content:center">
+      <div data-m="svc-more" style="display:flex;justify-content:center">
         <button onClick="{{ toggleServices }}" aria-expanded="{{ servicesOpen }}" style="display:inline-flex;align-items:center;gap:12px;background:transparent;border:1px solid rgba(17,17,17,0.2);color:#111111;font-family:Inter,sans-serif;font-weight:500;font-size:15px;padding:14px 26px;border-radius:999px;cursor:pointer;transition:background .25s, color .25s, border-color .25s" style-hover="background:#111111;color:#FAF9F7;border-color:#111111">
           {{ servicesLabel }}
           <span aria-hidden="true" style="width:7px;height:7px;background:#E63E62;transform:rotate(45deg);display:block"></span>
@@ -172,7 +195,7 @@ a:hover{color:#A81E40}
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:20px">
         <sc-for list="{{ cases }}" as="c" hint-placeholder-count="2">
-          <article data-reveal="" style="position:relative;overflow:hidden;background:#EFEDE9;border-radius:24px;padding:clamp(28px,4vw,48px);display:grid;grid-template-columns:minmax(0,1fr);gap:40px;min-height:clamp(420px,42vw,540px);align-content:space-between;min-width:0;container-type:inline-size">
+          <article data-m="case" data-reveal="" style="position:relative;overflow:hidden;background:#EFEDE9;border-radius:24px;padding:clamp(28px,4vw,48px);display:grid;grid-template-columns:minmax(0,1fr);gap:40px;min-height:clamp(420px,42vw,540px);align-content:space-between;min-width:0;container-type:inline-size">
             <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
               <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:rgba(17,17,17,0.6)">{{ c.sector }}</span>
               <span style="background:#111111;color:#FAF9F7;font-size:13px;font-weight:500;padding:8px 14px;border-radius:999px">{{ c.badge }}</span>
@@ -204,7 +227,7 @@ a:hover{color:#A81E40}
       <span ref="{{ stepsLineRef }}" aria-hidden="true" style="position:absolute;left:0;right:0;top:-0.5px;height:2px;background:#E63E62;transform-origin:left center;transform:scaleX(0);z-index:1;display:block;pointer-events:none"></span>
       <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:clamp(32px,3vw,48px) 0">
         <sc-for list="{{ steps }}" as="p" hint-placeholder-count="4">
-          <li data-reveal="" style="position:relative;display:grid;gap:16px;align-content:start;border-top:1px solid rgba(17,17,17,0.18);padding:24px 32px 0 0;cursor:default">
+          <li data-m="step" data-reveal="" style="position:relative;display:grid;gap:16px;align-content:start;border-top:1px solid rgba(17,17,17,0.18);padding:24px 32px 0 0;cursor:default">
             <div style="display:flex;align-items:center;gap:12px">
               <span aria-hidden="true" style="width:8px;height:8px;background:#E63E62;transform:rotate(45deg);display:block"></span>
               <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:rgba(17,17,17,0.6)">{{ p.n }}</span>
@@ -228,10 +251,10 @@ a:hover{color:#A81E40}
         <h2 id="testimonios-title" style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:clamp(32px,4.4vw,56px);line-height:1.04;letter-spacing:-0.03em;text-wrap:balance">What our clients say</h2>
       </div>
     </div>
-    <div style="overflow:hidden;margin-top:clamp(48px,6vw,80px)" onMouseEnter="{{ pauseQuotes }}" onMouseLeave="{{ resumeQuotes }}">
-      <div ref="{{ quotesRef }}" style="display:flex;gap:20px;width:max-content;padding:0 10px;will-change:transform">
+    <div data-m="qrail" style="overflow:hidden;margin-top:clamp(48px,6vw,80px)" onMouseEnter="{{ pauseQuotes }}" onMouseLeave="{{ resumeQuotes }}">
+      <div data-m="qtrack" ref="{{ quotesRef }}" style="display:flex;gap:20px;width:max-content;padding:0 10px;will-change:transform">
         <sc-for list="{{ quotesLoop }}" as="q" hint-placeholder-count="6">
-          <figure style="margin:0;flex:none;width:min(380px,82vw);border:1px solid rgba(17,17,17,0.1);border-radius:20px;padding:clamp(28px,3vw,40px);display:grid;gap:32px;align-content:space-between;background:#FAF9F7">
+          <figure data-m="qcard" style="margin:0;flex:none;width:min(380px,82vw);border:1px solid rgba(17,17,17,0.1);border-radius:20px;padding:clamp(28px,3vw,40px);display:grid;gap:32px;align-content:space-between;background:#FAF9F7">
             <blockquote style="margin:0;font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:clamp(19px,1.6vw,22px);line-height:1.4;letter-spacing:-0.01em;text-wrap:pretty">“{{ q.text }}”</blockquote>
             <figcaption style="display:flex;align-items:center;gap:14px">
               <span aria-hidden="true" style="width:44px;height:44px;border-radius:999px;background:#F6DCE2;color:#A81E40;display:flex;align-items:center;justify-content:center;flex:none;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.02em">{{ q.initials }}</span>
@@ -272,28 +295,28 @@ a:hover{color:#A81E40}
       </div>
       <nav aria-label="Footer navigation" style="display:grid;gap:12px;align-content:start;font-size:15px">
         <h2 style="margin:0 0 6px;font-size:13px;font-weight:500;color:rgba(250,249,247,0.6)">Navigation</h2>
-        <a href="#services" style="color:#FAF9F7" style-hover="color:#F28AA0">Services</a>
-        <a href="#portfolio" style="color:#FAF9F7" style-hover="color:#F28AA0">Portfolio</a>
-        <a href="#process" style="color:#FAF9F7" style-hover="color:#F28AA0">Process</a>
-        <a href="#contact" style="color:#FAF9F7" style-hover="color:#F28AA0">Contact</a>
+        <a href="#services" data-m="flink" style="color:#FAF9F7" style-hover="color:#F28AA0">Services</a>
+        <a href="#portfolio" data-m="flink" style="color:#FAF9F7" style-hover="color:#F28AA0">Portfolio</a>
+        <a href="#process" data-m="flink" style="color:#FAF9F7" style-hover="color:#F28AA0">Process</a>
+        <a href="#contact" data-m="flink" style="color:#FAF9F7" style-hover="color:#F28AA0">Contact</a>
       </nav>
       <div style="display:grid;gap:12px;align-content:start;font-size:15px">
         <h2 style="margin:0 0 6px;font-size:13px;font-weight:500;color:rgba(250,249,247,0.6)">Contact</h2>
-        <a href="mailto:hello@crealo.com" style="color:#FAF9F7" style-hover="color:#F28AA0">hello@crealo.com</a>
+        <a href="mailto:hello@crealo.com" data-m="flink" style="color:#FAF9F7" style-hover="color:#F28AA0">hello@crealo.com</a>
         <span style="color:rgba(250,249,247,0.8)">Buenos Aires · Remote</span>
       </div>
       <div style="display:grid;gap:12px;align-content:start;font-size:15px">
         <h2 style="margin:0 0 6px;font-size:13px;font-weight:500;color:rgba(250,249,247,0.6)">Social</h2>
-        <a href="#" style="color:#FAF9F7" style-hover="color:#F28AA0">LinkedIn</a>
-        <a href="#" style="color:#FAF9F7" style-hover="color:#F28AA0">Instagram</a>
-        <a href="#" style="color:#FAF9F7" style-hover="color:#F28AA0">Behance</a>
+        <a href="#" data-m="flink" style="color:#FAF9F7" style-hover="color:#F28AA0">LinkedIn</a>
+        <a href="#" data-m="flink" style="color:#FAF9F7" style-hover="color:#F28AA0">Instagram</a>
+        <a href="#" data-m="flink" style="color:#FAF9F7" style-hover="color:#F28AA0">Behance</a>
       </div>
     </div>
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid rgba(250,249,247,0.1);padding-top:24px;font-size:13px;color:rgba(250,249,247,0.6)">
       <span>© 2026 Crealo. All rights reserved.</span>
       <div style="display:flex;gap:24px">
-        <a href="#" style="color:rgba(250,249,247,0.6)" style-hover="color:#FAF9F7">Privacy</a>
-        <a href="#" style="color:rgba(250,249,247,0.6)" style-hover="color:#FAF9F7">Terms</a>
+        <a href="#" data-m="flink" style="color:rgba(250,249,247,0.6)" style-hover="color:#FAF9F7">Privacy</a>
+        <a href="#" data-m="flink" style="color:rgba(250,249,247,0.6)" style-hover="color:#FAF9F7">Terms</a>
       </div>
     </div>
   </div>
@@ -301,13 +324,15 @@ a:hover{color:#A81E40}
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;marcarProvisional&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Contenido&quot;},&quot;refraccion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;intensidad&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1,&quot;min&quot;:0,&quot;max&quot;:2,&quot;step&quot;:0.1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
 class Component extends DCLogic {
-  state = { wide: true, menuOpen: false, reduced: false };
+  state = { wide: true, mobile: false, menuOpen: false, reduced: false };
   navRef = React.createRef(); parallaxRef = React.createRef(); videoRef = React.createRef(); ctaDiamondRef = React.createRef(); marqueeRef = React.createRef(); quotesRef = React.createRef(); stepsRef = React.createRef(); stepsLineRef = React.createRef();
 
   componentDidMount() {
     this.mqWide = window.matchMedia('(min-width: 860px)');
     this.mqRM = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const sync = () => this.setState({ wide: this.mqWide.matches, reduced: this.mqRM.matches });
+    this.mqMob = window.matchMedia('(max-width: 767px)');
+    const sync = () => this.setState({ wide: this.mqWide.matches, mobile: this.mqMob.matches, reduced: this.mqRM.matches });
+    this.mqMob.addEventListener('change', sync);
     sync();
     this.mqWide.addEventListener('change', sync);
     this.mqRM.addEventListener('change', sync);
@@ -318,7 +343,7 @@ class Component extends DCLogic {
     setTimeout(() => { this.setupReveals(); this.setupVideo(); this.setupGlass(); this.setupCounters(); this.setupMarquee(); }, 0);
   }
   componentDidUpdate(pp, ps) {
-    if (ps.reduced !== this.state.reduced) setTimeout(() => { this.setupVideo(); this.setupReveals(); this.setupMarquee(); }, 0);
+    if (ps.reduced !== this.state.reduced || ps.mobile !== this.state.mobile) setTimeout(() => { this.setupVideo(); this.setupReveals(); this.setupMarquee(); }, 0);
     if (pp.refraccion !== this.props.refraccion) this.setupGlass();
   }
   componentWillUnmount() {
@@ -376,8 +401,9 @@ class Component extends DCLogic {
     cancelAnimationFrame(this.mqRaf);
     const tracks = [
       { el: this.marqueeRef.current, speed: 0.04, paused: () => this.mqPaused, x: 0 },
-      { el: this.quotesRef.current, speed: 0.03, paused: () => this.qPaused, x: 0 }
+      { el: this.state.mobile ? null : this.quotesRef.current, speed: 0.03, paused: () => this.qPaused, x: 0 }
     ].filter(t => t.el);
+    if (this.state.mobile && this.quotesRef.current) this.quotesRef.current.style.transform = 'none';
     if (this.state.reduced) { tracks.forEach(t => t.el.style.transform = 'none'); return; }
     let last = performance.now();
     const tick = now => {
@@ -496,7 +522,7 @@ class Component extends DCLogic {
         { n: '07', title: 'Pitch Decks & Sales', body: 'Sales decks and proposals with the same visual care as your brand.' },
         { n: '08', title: 'Email & Communication', body: 'Newsletters and transactional communication with consistent identity.' },
         { n: '09', title: 'Ongoing Consulting', body: 'Retained support for teams without an in-house designer.' }
-      ].slice(0, this.state.servicesOpen ? 9 : 3).map((s, i) => ({ ...s, fill: this.state.hoverSvc === i ? 1 : 0, enter: () => this.setState({ hoverSvc: i }), leave: () => this.setState({ hoverSvc: null }) })),
+      ].slice(0, (this.state.servicesOpen || this.state.mobile) ? 9 : 3).map((s, i) => ({ ...s, fill: this.state.hoverSvc === i ? 1 : 0, enter: () => this.setState({ hoverSvc: i }), leave: () => this.setState({ hoverSvc: null }) })),
       cases: [
         { sector: 'Fintech · Digital product', badge: '+180% conversion', metric: '+180%', value: 180, metricLabel: 'onboarding conversion', title: 'Onboarding redesign for a payments platform', body: 'We cut business account sign-up from 9 steps to 4 and redesigned the messaging at every stage.' },
         { sector: 'Retail · Branding + web', badge: '+42% engagement', metric: '+42%', value: 42, metricLabel: 'engagement', title: 'Brand system and e-commerce for a regional chain', body: 'A new identity, content guidelines and an online store built on the same visual system.' }
@@ -519,7 +545,7 @@ class Component extends DCLogic {
         { text: 'The new design system let us ship features twice as fast.', name: 'Daniel Hughes', role: 'CTO · Tándem' },
         { text: 'Our sales deck finally lives up to the product. We closed two major accounts.', name: 'Jessica Reed', role: 'Sales Director · Orilla' },
         { text: 'Their audit found what we couldn\'t see. Every recommendation had an impact.', name: 'Ryan Cooper', role: 'General Manager · Ferro & Co' }
-      ].map(q => ({ ...q, initials: q.name.split(' ').map(w => w[0]).join('') })); return [...Q, ...Q]; })()
+      ].map(q => ({ ...q, initials: q.name.split(' ').map(w => w[0]).join('') })); return this.state.mobile ? Q : [...Q, ...Q]; })()
     };
   }
 }
